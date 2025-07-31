@@ -1,35 +1,78 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import "./App.css";
+
+const vehicles = [
+  {
+    name: "Car",
+    image: "/images/car.png",
+    sound: "/sounds/car.mp3",
+    category: "Land",
+  },
+  {
+    name: "Bus",
+    image: "/images/bus.png",
+    sound: "/sounds/bus.mp3",
+    category: "Land",
+  },
+  {
+    name: "Plane",
+    image: "/images/plane.png",
+    sound: "/sounds/plane.mp3",
+    category: "Air",
+  },
+  {
+    name: "Boat",
+    image: "/images/boat.png",
+    sound: "/sounds/boat.mp3",
+    category: "Water",
+  },
+];
+
+const categories = ["All", "Land", "Air", "Water"];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const playSound = (src) => {
+    const audio = new Audio(src);
+    audio.play();
+  };
+
+  const filteredVehicles =
+    selectedCategory === "All"
+      ? vehicles
+      : vehicles.filter((v) => v.category === selectedCategory);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app">
+      <h1>Vehicle Learning</h1>
+
+      <div className="tabs">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            className={selectedCategory === cat ? "active" : ""}
+            onClick={() => setSelectedCategory(cat)}
+          >
+            {cat}
+          </button>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div className="vehicle-grid">
+        {filteredVehicles.map((v) => (
+          <div
+            key={v.name}
+            className="card"
+            onClick={() => playSound(v.sound)}
+          >
+            <img src={v.image} alt={v.name} />
+            <p>{v.name}</p>
+          </div>
+        ))}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
