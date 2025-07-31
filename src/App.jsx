@@ -1,73 +1,56 @@
 import React, { useState } from "react";
 import "./App.css";
 
-const vehicles = [
-  {
-    name: "Car",
-    image: "/images/car.png",
-    sound: "/sounds/car.mp3",
-    category: "Land",
-  },
-  {
-    name: "Bus",
-    image: "/images/bus.png",
-    sound: "/sounds/bus.mp3",
-    category: "Land",
-  },
-  {
-    name: "Plane",
-    image: "/images/plane.png",
-    sound: "/sounds/plane.mp3",
-    category: "Air",
-  },
-  {
-    name: "Boat",
-    image: "/images/boat.png",
-    sound: "/sounds/boat.mp3",
-    category: "Water",
-  },
+import carImg from "./assets/image/car.png";
+import busImg from "./assets/image/bus.png";
+import planeImg from "./assets/image/plane.png";
+import boatImg from "./assets/image/ship.jpg"; // or boat.png if you rename it
+
+const vehicleData = [
+  { name: "Car", image: carImg, sound: "/sounds/car.mp3", type: "Land" },
+  { name: "Bus", image: busImg, sound: "/sounds/bus.mp3", type: "Land" },
+  { name: "Plane", image: planeImg, sound: "/sounds/plane.mp3", type: "Air" },
+  { name: "Boat", image: boatImg, sound: "/sounds/boat.mp3", type: "Water" },
 ];
 
 const categories = ["All", "Land", "Air", "Water"];
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selected, setSelected] = useState("All");
+
+  const filtered = selected === "All"
+    ? vehicleData
+    : vehicleData.filter(v => v.type === selected);
 
   const playSound = (src) => {
-    const audio = new Audio(src);
-    audio.play();
+    new Audio(src).play();
   };
 
-  const filteredVehicles =
-    selectedCategory === "All"
-      ? vehicles
-      : vehicles.filter((v) => v.category === selectedCategory);
-
   return (
-    <div className="app">
-      <h1>Vehicle Learning</h1>
+    <div className="main-container">
+      <h1>Learn Vehicles</h1>
 
-      <div className="tabs">
-        {categories.map((cat) => (
+      <div className="button-group">
+        {categories.map(cat => (
           <button
             key={cat}
-            className={selectedCategory === cat ? "active" : ""}
-            onClick={() => setSelectedCategory(cat)}
+            className={selected === cat ? "active" : ""}
+            onClick={() => setSelected(cat)}
           >
             {cat}
           </button>
         ))}
       </div>
 
-      <div className="vehicle-grid">
-        {filteredVehicles.map((v) => (
+      <div className="cards">
+        {filtered.map((item) => (
           <div
-            key={v.name}
+            key={item.name}
             className="card"
-            onClick={() => playSound(v.sound)}
+            onClick={() => playSound(item.sound)}
           >
-            <img src={v.image} alt={v.name} />
-            <p>{v.name}</p>
+            <img src={item.image} alt={item.name} />
+            <span>{item.name}</span>
           </div>
         ))}
       </div>
