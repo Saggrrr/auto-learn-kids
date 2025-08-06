@@ -1,45 +1,71 @@
+.scroll-srapper{
+  display: flex;
+  flex-direction: column;
+  height: 400vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+
+
+}
+
 .mode-page {
-  padding: 40px 20px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-}
+  width: 100vw;
+  height: 100vh; /* Optional: full screen */
+  display: flex;              /* 🔥 Required to center */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-.mode-page h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.mode-page p {
-  font-size: 1.1rem;
-  margin-bottom: 40px;
-  color: #555;
 }
 
 .transport-categories {
+  width: 100vw;
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+
 }
 
 .transport-card {
-  background: white;
-  border-radius: 12px;
+  width: 300px;
+  height: 200px;
+  margin: 20px;
   padding: 20px;
-  width: 250px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
+  background-color: #90e0ef;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.land-card {
+  background-image: url('./images/land.png');
 }
 
-.transport-card:hover {
-  transform: translateY(-5px);
+.water-card {
+  background-image: url('./images/water.png');
 }
 
-.transport-card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.air-card {
+  background-image: url('./images/air.png');
 }
 
-.transport-card p {
-  color: #333;
+.land-vehicles {
+  height: 100vh;
+  width: 100vw;
+  background-color: #0077b6;
+  color: white;
+}
+.water-vehicles {
+  height: 100vh;
+  width: 100vw;
+  background-color: #00b4d8;
+  color: white;
+}
+.air-vehicles {
+  height: 100vh;
+  width: 100vw;
+  background-color: #90e0ef;
+  color: #023e8a;
 }
