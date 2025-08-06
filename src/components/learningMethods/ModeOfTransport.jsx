@@ -13,7 +13,13 @@ import planeImg from "./images/plane.png";
 import helicopterImg from "./images/helicopter.png"; // Add helicopter image if needed
 
 
-
+import carSound from './sounds/car.mp3';
+import busSound from './sounds/bus.mp3';
+import scooterSound from './sounds/vespa.mp3'; // Add scooter sound if needed
+import planeSound from './sounds/plane.mp3';
+import shipSound from './sounds/ship.mp3'; // or boat.mp3 if you rename it
+import boatSound from './sounds/pedalBoat.mp3'; // or ship.mp3 if you rename it
+import helicopterSound from './sounds/helicopter.mp3'; // Add helicopter sound if needed
 
 import VehicleCard from '../Vehicles/vehicleCard';
 
@@ -61,16 +67,19 @@ const ModeOfTransPort = () => {
             <VehicleCard 
               title="Car"
               image={carImg}
+              sound={carSound}
               onClick={() => console.log('Car clicked')}
             />
             <VehicleCard
               title="Bus"
               image={busImg}
+              sound={busSound}
               onClick={() => console.log('Bus clicked')}
             />
             <VehicleCard
               title="Scooter"
               image={scooterImg}
+              sound={scooterSound}
               onClick={() => console.log('Scooter clicked')}
             />
         </div>
@@ -83,11 +92,13 @@ const ModeOfTransPort = () => {
             <VehicleCard 
               title="Ship"
               image={shipImg}
+              sound={shipSound}
               onClick={() => console.log('Ship clicked')}
             />
             <VehicleCard
               title="Boat"
               image={boatImg}
+              sound={boatSound}
               onClick={() => console.log('Boat clicked')}
             />
         </div>
@@ -100,11 +111,13 @@ const ModeOfTransPort = () => {
             <VehicleCard 
               title="Plane"
               image={planeImg}
+              sound={planeSound}
               onClick={() => console.log('Plane clicked')}
             />
             <VehicleCard
               title="Helicopter"
               image={helicopterImg}
+              sound={helicopterSound}
               onClick={() => console.log('Helicopter clicked')}
             />
         </div>
