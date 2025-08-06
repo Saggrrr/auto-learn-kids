@@ -13,6 +13,9 @@ const MainPage = () => {
                     different modes of transportation in English, fueling their curiosity
                     and imagination.
                 </p>
+                <button onClick={()=>{document.getElementById('bottom').scrollIntoView({behavior: 'smooth'})}}>
+                    Let's Go
+                </button>
             </div>
             <div className='image-content'>
                 <img
@@ -21,7 +24,11 @@ const MainPage = () => {
                 />
             </div>
         </div>
-        <div className='bottom-section'>
+
+{/* -------------------------------------------------- */}
+
+
+        <div className='bottom-section' id='bottom'>
             <h2>Choose The mode of Learning</h2>
             {/* This is where the vehicle cards will be rendered */}
         </div>
