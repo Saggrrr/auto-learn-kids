@@ -52,3 +52,60 @@
     width: 100%;
     height: auto;
 }
+
+
+/* -------------------------------------------------- */
+
+
+.bottom-section{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+}
+
+
+
+.choose-method-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  margin: 20px auto;
+  transition: transform 0.2s ease;
+}
+
+.choose-method-card:hover {
+  transform: translateY(-5px);
+}
+
+.choose-method-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.choose-method-card p {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.choose-method-card button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.choose-method-card button:hover {
+  background-color: #0056b3;
+}
