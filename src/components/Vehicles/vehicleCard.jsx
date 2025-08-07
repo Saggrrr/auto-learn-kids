@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'; // ✅ **Added useState**
+import React, { useRef, useState, useEffect } from 'react'; // ✅ **Added useEffect**
 import PropTypes from 'prop-types';
 import './VehicleCard.css';
 
@@ -34,13 +34,28 @@ const VehicleCard = ({ title, image, altImage, sound, onClick }) => {
     onClick(); // optional: keeps original onClick
   };
 
+  // ✅✅✅ KEYBOARD HANDLER: ENTER KEY TO TOGGLE IMAGE ✅✅✅
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Enter') {
+        setCurrentImage((prev) => (prev === image ? altImage : image)); // ✅ Same toggle logic
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown); // ✅ Cleanup
+    };
+  }, [image, altImage]); // ✅ Dependencies for toggle
+
   return (
     <div className="vehicle-card" onClick={onClick}>
       <img src={currentImage} alt={title} className="vehicle-image" /> {/* ✅ **Uses currentImage** */}
       <h2 className="vehicle-title">{title}</h2>
 
       <button className="vehicle-button" onClick={handleExploreClick}>
-        🚀 Switch Style	
+        🚀 Switch Style
       </button> {/* ✅ **New click handler to toggle image** */}
 
       <button
@@ -50,7 +65,7 @@ const VehicleCard = ({ title, image, altImage, sound, onClick }) => {
           playSound();
         }}
       >
-        🔊 Hear Me!	
+        👂 Hear Me!
       </button>
     </div>
   );
