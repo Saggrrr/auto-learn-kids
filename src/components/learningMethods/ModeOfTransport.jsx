@@ -1,5 +1,7 @@
 import React from 'react';
 import './ModeOfTransPort.css';
+import { useNavigate } from 'react-router-dom';
+
 
 import carImg from "./images/car.png";
 import carImgAlt from "./images/car1.png"; // ✅ **Alternate image**
@@ -30,9 +32,15 @@ import helicopterSound from './sounds/helicopter.mp3';
 import VehicleCard from '../Vehicles/vehicleCard';
 
 const ModeOfTransPort = () => {
+    const navigate = useNavigate();
+
   return (
     <div className="scroll-wrapper">
       <div className="mode-page">
+        {/* ✅ BACK BUTTON ADDED HERE */}
+        <button className="back-button" onClick={() => navigate(-1)}>
+          ⬅ Back
+        </button>
         <h1>Mode of Transport</h1>
         <p>Here you can explore different vehicles based on how they move: land, water, or air!</p>
 
