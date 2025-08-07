@@ -50,3 +50,10 @@ flex-direction: column;
   border-color: #ffa500; /* orange on focus */
   box-shadow: 0 0 10px #ffb347;
 }
+
+.welcome-text {
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 10px;
+}

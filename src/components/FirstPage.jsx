@@ -33,6 +33,9 @@ function FirstPage() {
         onMouseEnter={() => setHovered(true)}   // ✅ MOUSE ENTER
         onMouseLeave={() => setHovered(false)}  // ✅ MOUSE LEAVE
       />
+
+{name && <p className="welcome-text">Welcome, {name}!</p>}  {/* ✅ Conditional rendering */}
+
       <button className="start-button" onClick={handleBegin}>
         Begin Learning
       </button>
