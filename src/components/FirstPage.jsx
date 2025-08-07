@@ -10,7 +10,7 @@ function FirstPage() {
 
   const handleBegin = () => {
     console.log("Begin button clicked");
-    if (name.trim() !== '') {
+    if (name.trim() !== '') {               //added conditional rendering here
       navigate('/main');
     } else {
       alert("Please enter your name to begin.");
