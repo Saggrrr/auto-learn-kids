@@ -18,6 +18,14 @@ const VehicleCard = ({ title, image, sound, onClick }) => {
     currentAudio = newAudio;
     newAudio.play();
     audioRef.current = newAudio;
+
+    // Stop it after 5 seconds
+    setTimeout(() => {
+      if (newAudio === currentAudio) {
+        newAudio.pause();
+        newAudio.currentTime = 0;
+      }
+    }, 5000);
   };
 
   return (
