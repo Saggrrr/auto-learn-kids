@@ -23,22 +23,24 @@ function FirstPage() {
       className="first-page"
       style={{ backgroundImage: `url(${bgImg})` }}
     >
-      <input
-        type="text"
-        placeholder="Enter your name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        className="name-input"
-        style={{ backgroundColor: hovered ? '#fbbcf9ff' : 'white' }} // ✅ BACKGROUND COLOR CHANGE
-        onMouseEnter={() => setHovered(true)}   // ✅ MOUSE ENTER
-        onMouseLeave={() => setHovered(false)}  // ✅ MOUSE LEAVE
-      />
+      <form onSubmit={(e) => { e.preventDefault(); handleBegin(); }}>
+        <input
+          type="text"
+          placeholder="Enter your name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="name-input"
+          style={{ backgroundColor: hovered ? '#fbbcf9ff' : 'white' }} // ✅ BACKGROUND COLOR CHANGE
+          onMouseEnter={() => setHovered(true)}   // ✅ MOUSE ENTER
+          onMouseLeave={() => setHovered(false)}  // ✅ MOUSE LEAVE
+        />
 
-{name && <p className="welcome-text">Welcome, {name}!</p>}  {/* ✅ Conditional rendering */}
+        {name && <p className="welcome-text">Welcome, {name}!</p>}  {/* ✅ Conditional rendering */}
 
-      <button className="start-button" onClick={handleBegin}>
-        Begin Learning
-      </button>
+        <button type="submit" className="start-button">
+          Begin Learning
+        </button>
+      </form>
     </div>
   );
 }
