@@ -143,7 +143,9 @@ h1 {
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
   animation: bounceIn 1s ease;
 
-
+  
+  border-color: #01090d;
+  border-width: 2px;
 }
 
 @keyframes bounceIn {
@@ -201,4 +203,32 @@ h1 {
 
 .back-button:hover {
   background-color: #3cbf00;
+}
+.explore-mode-button {
+  padding: 12px 28px;
+  font-size: 1.0rem;
+  font-weight: 700;
+  background-color: transparent;
+  color: #4B0082; /* ✅ Deep indigo - dark, fun, readable */
+  border: 2px solid #4B0082;
+  border-radius: 14px;
+  cursor: pointer;
+  font-family: 'Comic Sans MS', 'Poppins', cursive;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+  letter-spacing: 1px;
+  box-shadow: 0 0 6px #4B008255; /* subtle glow */
+}
+
+.explore-mode-button:hover {
+  background-color: rgba(75, 0, 130, 0.1);
+  color: #ff6f61; /* 🎉 Hot pink on hover */
+  border-color: #ff6f61;
+  transform: scale(1.08);
+  box-shadow: 0 0 10px #ff149355;
+}
+
+.explore-mode-button:active {
+  transform: scale(0.95);
+  background-color: rgba(255, 20, 147, 0.1);
 }

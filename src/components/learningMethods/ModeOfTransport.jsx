@@ -46,20 +46,19 @@ const ModeOfTransPort = () => {
 
         <div className="transport-categories">
           <div className="transport-card land-card">
-            <h1>Land</h1>
-            <button onClick={() => document.getElementById('landd-vehicles').scrollIntoView({ behavior: 'smooth' })}>
+
+            <button className="explore-mode-button" onClick={() => document.getElementById('landd-vehicles').scrollIntoView({ behavior: 'smooth' })}>
               Explore Land Vehicles
             </button>
           </div>
           <div className="transport-card water-card">
-            <h1>Water</h1>
-            <button onClick={() => document.getElementById('waterr-vehicles').scrollIntoView({ behavior: 'smooth' })}>
+            <button className="explore-mode-button" onClick={() => document.getElementById('waterr-vehicles').scrollIntoView({ behavior: 'smooth' })}>
               Explore Water Vehicles
             </button>
           </div>
           <div className="transport-card air-card">
-            <h1>Air</h1>
-            <button onClick={() => document.getElementById('airr-vehicles').scrollIntoView({ behavior: 'smooth' })}>
+
+            <button className="explore-mode-button" onClick={() => document.getElementById('airr-vehicles').scrollIntoView({ behavior: 'smooth' })}>
               Explore Air Vehicles
             </button>
           </div>
