@@ -24,7 +24,11 @@
   align-items: center;
   justify-content: center;
 
+
 }
+
+
+
 
 .transport-categories {
   width: 100vw;
@@ -158,3 +162,21 @@ h1 {
 
 /*------------------*/
 
+@media screen and (max-width: 768px) {
+  .mode-page {
+    height: auto; /* 🔁 Let content define height */
+    padding: 20px 0;
+  }
+
+  .transport-categories {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .transport-card {
+    width: 90vw;
+    height: 150px; /* 🔧 Reduce height to fit all 3 on screen */
+    padding: 10px;
+  }
+}

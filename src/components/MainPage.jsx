@@ -14,9 +14,9 @@ const MainPage = () => {
             <div className='text-content'>
                 <h1>Let's learn about <br /> vehicles!</h1>
                 <p>
-                    Zoom, sail, and fly! This vehicles vocabulary list introduces kids to
-                    different modes of transportation in English, fueling their curiosity
-                    and imagination.
+                Welcome! This site helps you learn about different vehicles — like cars, boats, and planes. Tap on each one to see it and hear how it sounds.
+
+
                 </p>
                 <button className="lets-go-button" onClick={()=>{document.getElementById('bottom').scrollIntoView({behavior: 'smooth'})}}>
                     Let's Go
