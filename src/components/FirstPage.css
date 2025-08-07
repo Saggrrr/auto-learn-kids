@@ -11,17 +11,21 @@
 }
 
 .start-button {
-  padding: 12px 24px;
-  font-size: 18px;
-  background-color: rgba(255,255,255,0.8);
-  color: rgb(255, 0, 0);
-  border: 2px solid limegreen;
-  border-radius: 8px;
+  padding: 14px 32px;
+  font-size: 20px;
+  background-color: #3dd9d6; /* Aqua blue */
+  color: #fff;
+  border: none;
+  border-radius: 20px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-family: 'Comic Sans MS', 'Poppins', cursive;
+  font-weight: bold;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
 .start-button:hover {
-  background-color: rgba(255,255,255,0.8);
-  color: black;
+  background-color: #ff5fa2; /* Pink */
+  transform: scale(1.1);
+  color: #fff;
 }

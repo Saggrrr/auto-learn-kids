@@ -18,7 +18,7 @@ const MainPage = () => {
                     different modes of transportation in English, fueling their curiosity
                     and imagination.
                 </p>
-                <button onClick={()=>{document.getElementById('bottom').scrollIntoView({behavior: 'smooth'})}}>
+                <button className="lets-go-button" onClick={()=>{document.getElementById('bottom').scrollIntoView({behavior: 'smooth'})}}>
                     Let's Go
                 </button>
             </div>

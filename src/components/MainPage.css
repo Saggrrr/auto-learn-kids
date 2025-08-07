@@ -109,3 +109,26 @@
 .choose-method-card button:hover {
   background-color: #0056b3;
 }
+
+
+.lets-go-button {
+  background-color: #7ddf64; /* bright green */
+  color: white;
+  font-size: 22px;
+  font-family: 'Comic Sans MS', 'Poppins', cursive;
+  font-weight: bold;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  margin-left: 250px;
+}
+
+.lets-go-button:hover {
+  background-color: #ff69b4; /* playful pink */
+  transform: scale(1.1) rotate(-2deg);
+  color: #fff;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.3);
+}
