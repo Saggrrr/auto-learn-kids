@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import PropTypes from 'prop-types'; // ✅ Import PropTypes
 import './VehicleCard.css';
 
 let currentAudio = null; // 👈 shared across all cards
@@ -7,19 +8,16 @@ const VehicleCard = ({ title, image, sound, onClick }) => {
   const audioRef = useRef(null);
 
   const playSound = () => {
-    // Stop any currently playing audio
     if (currentAudio && !currentAudio.paused) {
       currentAudio.pause();
       currentAudio.currentTime = 0;
     }
 
-    // Create and play new audio
     const newAudio = new Audio(sound);
     currentAudio = newAudio;
     newAudio.play();
     audioRef.current = newAudio;
 
-    // Stop it after 5 seconds
     setTimeout(() => {
       if (newAudio === currentAudio) {
         newAudio.pause();
@@ -33,11 +31,74 @@ const VehicleCard = ({ title, image, sound, onClick }) => {
       <img src={image} alt={title} className="vehicle-image" />
       <h2 className="vehicle-title">{title}</h2>
       <button className="vehicle-button">Explore {title}</button>
-      <button className="sound-button" onClick={(e) => { e.stopPropagation(); playSound(); }}>
+      <button
+        className="sound-button"
+        onClick={(e) => {
+          e.stopPropagation();
+          playSound();
+        }}
+      >
         Sound
       </button>
     </div>
   );
 };
 
+// ✅ Prop Validation
+VehicleCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  sound: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
 export default VehicleCard;
+
+
+
+
+
+
+// import React, { useRef } from 'react';
+// import './VehicleCard.css';
+
+// let currentAudio = null; // 👈 shared across all cards
+
+// const VehicleCard = ({ title, image, sound, onClick }) => {
+//   const audioRef = useRef(null);
+
+//   const playSound = () => {
+//     // Stop any currently playing audio
+//     if (currentAudio && !currentAudio.paused) {
+//       currentAudio.pause();
+//       currentAudio.currentTime = 0;
+//     }
+
+//     // Create and play new audio
+//     const newAudio = new Audio(sound);
+//     currentAudio = newAudio;
+//     newAudio.play();
+//     audioRef.current = newAudio;
+
+//     // Stop it after 5 seconds
+//     setTimeout(() => {
+//       if (newAudio === currentAudio) {
+//         newAudio.pause();
+//         newAudio.currentTime = 0;
+//       }
+//     }, 5000);
+//   };
+
+//   return (
+//     <div className="vehicle-card" onClick={onClick}>
+//       <img src={image} alt={title} className="vehicle-image" />
+//       <h2 className="vehicle-title">{title}</h2>
+//       <button className="vehicle-button">Explore {title}</button>
+//       <button className="sound-button" onClick={(e) => { e.stopPropagation(); playSound(); }}>
+//         Sound
+//       </button>
+//     </div>
+//   );
+// };
+
+// export default VehicleCard;
