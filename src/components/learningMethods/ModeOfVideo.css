@@ -40,8 +40,8 @@
   background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  width: 280px;
-  padding: 15px;
+  width: 500px; /* ⬅️ increased width */
+  padding: 20px;
   text-align: center;
   border: 3px solid #ffcc80;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -60,13 +60,31 @@
 }
 
 .video-card h3 {
-  font-size: 1rem;
-  margin-top: 10px;
+  font-size: 1.2rem; /* ✅ bigger heading */
+  margin-top: 12px;
   color: #333;
 }
 
 .video-desc {
-  font-size: 0.85rem;
+  font-size: 1rem; /* ✅ bigger description */
   color: #555;
-  margin-top: 5px;
+  margin-top: 8px;
+}
+
+
+
+/* ✅ Medium devices (tablets) */
+@media (max-width: 768px) {
+  .video-card {
+    width: 90%;
+    max-width: 450px;
+  }
+}
+
+/* ✅ Small devices (phones) */
+@media (max-width: 480px) {
+  .video-card {
+    width: 95%;
+    max-width: 350px;
+  }
 }
