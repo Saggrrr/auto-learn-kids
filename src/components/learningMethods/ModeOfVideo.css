@@ -1,0 +1,72 @@
+.video-page {
+  padding: 20px;
+  text-align: center;
+  background: url('../../assets/image/background.png') center/cover no-repeat fixed;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.intro-text {
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 8px 16px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.video-grid {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  gap: 25px;
+  align-items: center;
+  padding-right: 10px; /* space for scrollbar */
+}
+
+/* scrollbar styling (optional, kid-friendly look) */
+.video-grid::-webkit-scrollbar {
+  width: 8px;
+}
+.video-grid::-webkit-scrollbar-thumb {
+  background-color: #ffb347;
+  border-radius: 10px;
+}
+.video-grid::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.video-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  width: 280px;
+  padding: 15px;
+  text-align: center;
+  border: 3px solid #ffcc80;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.video-player {
+  width: 100%;
+  border-radius: 15px;
+  border: 3px solid #ffb347;
+  background-color: #fff;
+}
+
+.video-card h3 {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+.video-desc {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 5px;
+}

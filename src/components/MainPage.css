@@ -66,6 +66,15 @@
 
 }
 
+.bottom-cards-section{
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+}
+
 
 
 .choose-method-card {
@@ -75,8 +84,10 @@
   padding: 20px;
   width: 300px;
   text-align: center;
-  margin: 20px auto;
+  margin: 20px;
   transition: transform 0.2s ease;
+
+
 }
 
 .choose-method-card:hover {
