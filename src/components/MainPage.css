@@ -143,4 +143,24 @@
   color: #fff;
   box-shadow: 0 10px 18px rgba(0, 0, 0, 0.3);
 }
+@media screen and (max-width: 768px) {
+  .top-section,
+  .bottom-section {
+    flex-direction: column;
+    height: auto;      /* ✅ Let content decide height */
+    min-height: auto;
+  }
 
+  .main-page h1 {
+    font-size: 28px;
+  }
+
+  .choose-method-card {
+    width: 90%;
+  }
+
+  .bottom-cards-section {
+    flex-direction: column;
+    min-height: auto;
+  }
+}

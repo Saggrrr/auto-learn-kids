@@ -1,5 +1,6 @@
 // src/components/learningMethods/ModeOfVideo.jsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ModeOfVideo.css';
 
 import video1 from '../../assets/videos/video1.mp4';
@@ -17,8 +18,18 @@ const videos = [
 ];
 
 function ModeOfVideo() {
+  const navigate = useNavigate();
+
   return (
     <div className="video-page">
+      {/* ✅ Back Button */}
+      <button 
+        className="back-button" 
+        onClick={() => navigate(-1)}
+      >
+        ← Back
+      </button>
+
       <h1>Video Learning</h1>
       <p className="intro-text">Here you can watch fun videos about vehicles!</p>
       
