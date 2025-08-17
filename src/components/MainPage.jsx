@@ -3,6 +3,8 @@ import './MainPage.css';
 import homePagePic from '../assets/image/homePagePic.jpg'; 
 import allVehicles from '../assets/image/allVehicles.png'; 
 import vid_thumbnail from '../assets/image/video_image.png'; 
+import mental_thumbnail from '../assets/image/goodhabit_img.png';
+
 import { useNavigate } from 'react-router-dom'; //  Routing (useNavigate)
 
 
@@ -53,6 +55,16 @@ const MainPage = () => {
                         Watch Videos
                     </button>
                 </div>
+
+                {/* Mental Well-being Learning Card */}
+                <div className="choose-method-card">
+                    <img src={mental_thumbnail} alt="mental well-being learning card"/> {/*  Using imported image */}
+                    <p>Explore activities and tips to improve your mental well-being</p>
+                    <button onClick={() => navigate('/mode-of-mental-wellbeing')}> {/*  Routing & Event Handling */}
+                        Start Now
+                    </button>
+                </div>
+
             </div>
         </div>
     </div>
