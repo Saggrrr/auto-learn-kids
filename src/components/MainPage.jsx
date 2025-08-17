@@ -60,11 +60,10 @@ const MainPage = () => {
                 <div className="choose-method-card">
                     <img src={mental_thumbnail} alt="mental well-being learning card"/> {/*  Using imported image */}
                     <p>Explore activities and tips to improve your mental well-being</p>
-                    <button onClick={() => navigate('/mode-of-mental-wellbeing')}> {/*  Routing & Event Handling */}
+                    <button onClick={() => navigate('/good-habit')}> {/*  Routing & Event Handling */}
                         Start Now
                     </button>
                 </div>
-
             </div>
         </div>
     </div>
@@ -72,3 +71,4 @@ const MainPage = () => {
 };
 
 export default MainPage;
+

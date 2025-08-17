@@ -22,7 +22,7 @@ function ModeOfVideo() {
 
   return (
     <div className="video-page">
-      {/* ✅ Back Button */}
+      {/* Back Button */}
       <button 
         className="back-button" 
         onClick={() => navigate(-1)}

@@ -1,14 +1,14 @@
 .scroll-wrapper{
   display: flex;
   flex-direction: column;
-  height: 400vh;
+  min-height: 100vh;  
   overflow-y: scroll;
   scroll-behavior: smooth;
 
   /*important fix for background image*/
   background-image: url('./images/background.png'); /* 👈 Your background image */
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-size: cover;   
+    background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed; /* Optional: keeps image fixed while scrolling */
 
@@ -231,4 +231,18 @@ h1 {
 .explore-mode-button:active {
   transform: scale(0.95);
   background-color: rgba(255, 20, 147, 0.1);
+}
+
+.all-vehicles {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.all-vehicles .vehicle-card-imported {
+  display: flex;
+  flex-wrap: wrap;      /* ✅ allow wrapping */
+  justify-content: center;
+  gap: 20px;            /* ✅ space between cards */
 }
