@@ -1,14 +1,14 @@
 .scroll-wrapper{
   display: flex;
   flex-direction: column;
-  min-height: 100vh;  
+  height: 400vh;
   overflow-y: scroll;
   scroll-behavior: smooth;
 
   /*important fix for background image*/
   background-image: url('./images/background.png'); /* 👈 Your background image */
-  background-size: cover;   
-    background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed; /* Optional: keeps image fixed while scrolling */
 
@@ -233,16 +233,29 @@ h1 {
   background-color: rgba(255, 20, 147, 0.1);
 }
 
-.all-vehicles {
-  width: 100vw;
-  min-height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
+.all-vehicles .vehicle-card-imported {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 25px;
+  max-width: 1200px;  /* keeps grid from stretching full screen */
+  margin: 0 auto;     /* center grid */
+  justify-items: center; /* center each card inside its cell */
 }
 
-.all-vehicles .vehicle-card-imported {
-  display: flex;
-  flex-wrap: wrap;      /* ✅ allow wrapping */
-  justify-content: center;
-  gap: 20px;            /* ✅ space between cards */
+.vehicle-card {
+  width: 250px;   /* fixed width for each card */
+  height: auto;   /* let height adjust to content */
+}
+
+/* Responsive fix */
+@media (max-width: 1024px) {
+  .all-vehicles .vehicle-card-imported {
+    grid-template-columns: repeat(2, 250px); /* 2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .all-vehicles .vehicle-card-imported {
+    grid-template-columns: 250px; /* 1 per row */
+  }
 }

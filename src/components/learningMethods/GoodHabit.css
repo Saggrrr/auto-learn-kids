@@ -1,111 +1,123 @@
-/* Basic Reset and Font */
-body, h1, h2, p {
-  margin: 0;
-  padding: 0;
-  font-family: 'Comic Sans MS', 'Arial', sans-serif; /* A kid-friendly font */
-}
-
-/* Overall Container */
-.app-container {
-  background: #fdf5e6; /* A light, warm background color */
-  color: #555;
-  min-height: auto;
-  width:100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* ========== INTRO PAGE ========== */
+.intro-page {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
   text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
+  padding: 60px 20px;
+  height: 100vh;
+  text-align: center;
 }
 
-/* Header Section */
+.intro-page h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 25px;
+}
+
+.intro-page p {
+  font-size: 1.2rem;
+  max-width: 750px;
+  margin: 0 auto 15px;
+  color: #444;
+}
+
+/* ========== HABIT PAGE ========== */
+.habit-page {
+  background: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
 .header {
-  background: #ffecb3; /* A bright, cheerful yellow */
+  background: #fff8e1;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 40px;
   width: 100%;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
 .header h1 {
-  color: #ff8c00; /* A vibrant orange */
-  font-size: 2.5rem;
+  color: #ff7043;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
 }
 
 .header p {
-  color: #e65100; /* A darker orange */
-  font-size: 1.2rem;
-}
-
-/* Main Content Area */
-.main-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  width: 100%;
-  max-width: 1200px;
-}
-
-/* Section Cards */
-.section-card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-  border: 3px solid transparent;
-}
-
-/* Specific icon colors */
-.section-card:nth-child(1) .card-icon { color: #ffd700; } /* Gold */
-.section-card:nth-child(2) .card-icon { color: #4CAF50; } /* Green */
-.section-card:nth-child(3) .card-icon { color: #2196F3; } /* Blue */
-.section-card:nth-child(4) .card-icon { color: #e91e63; } /* Pink */
-
-.card-icon {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.section-card h2 {
-  color: #333;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.card-text {
-  color: #777;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* Footer Section */
-.footer {
-  margin-top: 40px;
-  padding: 15px;
-  background: #ffecb3;
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.footer p {
-  color: #e65100;
+  color: #6d4c41;
   font-size: 1.1rem;
 }
 
-/* Responsive Design */
+/* ========== MAIN CONTENT GRID ========== */
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Always 4 columns */
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px; /* keeps layout centered */
+}
+
+.section-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  color: #ff7043;
+}
+
+.section-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.section-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  margin-top: 50px;
+  padding: 20px;
+  background: #fff8e1;
+  border-radius: 20px;
+  width: 100%;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+.footer p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ========== RESPONSIVE FIXES ========== */
 @media (max-width: 768px) {
-  .header h1 {
-    font-size: 2rem;
+  .main-content {
+    grid-template-columns: 1fr; /* 1 card per row on small screens */
   }
-  
-  .header p {
+
+  .intro-page h1 {
+    font-size: 2.2rem;
+  }
+
+  .intro-page p {
     font-size: 1rem;
   }
 
-  .main-content {
-    grid-template-columns: 1fr;
+  .header h1 {
+    font-size: 1.6rem;
   }
 }
