@@ -7,6 +7,7 @@ import ModeOfTransport from './components/learningMethods/ModeOfTransport';
 function App() {
   return (
     <Router>
+
       <Routes>
         <Route path="/" element={<FirstPage />} />
         <Route path="/main" element={<MainPage />} />
