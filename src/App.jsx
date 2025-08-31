@@ -4,6 +4,7 @@ import FirstPage from './components/FirstPage';
 import MainPage from './components/MainPage';
 import ModeOfTransport from './components/learningMethods/ModeOfTransport'; 
 
+
 function App() {
   return (
     <Router>
